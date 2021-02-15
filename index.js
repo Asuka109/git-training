@@ -14,13 +14,14 @@ const fib = (n, sub1 = 1, sub2 = 1) => {
 /**
  * 使用迭代法求解斐波那契数列
  * @param {number} n 求解斐波那契数列的第 n 项，计数从 1 开始
+ * @returns {number}
  */
 const iterFib = n => {
+  if (!n || typeof n !== 'number') return 0
+  if (n < 3) return 1
   let sub1 = 1, sub2 = 1
-  if (n > 2) {
-    for (let i = 3; i < n; i++) {
-      [sub1, sub2] = [sub1 + sub2, sub1]
-    }
+  for (let i = 3; i < n; i++) {
+    [sub1, sub2] = [sub1 + sub2, sub1]
   }
   return sub1 + sub2
 }
