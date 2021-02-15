@@ -1,7 +1,9 @@
 /**
- * @param {number} n 
- * @param {number} sub1
- * @param {number} sub2
+ * 使用尾递归优化求解斐波那契数列
+ * 实际函数共执行 n - 1 次，其中计算 n - 2 次
+ * @param {number} n 求解斐波那契数列的第 n 项，计数从 1 开始
+ * @param {number} sub1 n - 1 的子问题结果
+ * @param {number} sub2 n - 2 的子问题结果
  * @returns {number}
  */
 const fib = (n, sub1 = 1, sub2 = 1) => {
