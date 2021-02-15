@@ -11,4 +11,21 @@ const fib = (n, sub1 = 1, sub2 = 1) => {
   return fib(n - 1, sub1 + sub2, sub1)
 }
 
-module.exports = fib
+/**
+ * 使用迭代法求解斐波那契数列
+ * @param {number} n 求解斐波那契数列的第 n 项，计数从 1 开始
+ */
+const iterFib = n => {
+  const memo = [0, 1, 1]
+  if (n > 2) {
+    for (let i = 3; i <= n; i++) {
+      memo[i] = memo[i-1] + memo[i-2]
+    }
+  }
+  return memo[n]
+}
+
+module.exports = {
+  fib,
+  iterFib
+}
