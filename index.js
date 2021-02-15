@@ -16,13 +16,13 @@ const fib = (n, sub1 = 1, sub2 = 1) => {
  * @param {number} n 求解斐波那契数列的第 n 项，计数从 1 开始
  */
 const iterFib = n => {
-  const memo = [0, 1, 1]
+  let sub1 = 1, sub2 = 1
   if (n > 2) {
-    for (let i = 3; i <= n; i++) {
-      memo[i] = memo[i-1] + memo[i-2]
+    for (let i = 3; i < n; i++) {
+      [sub1, sub2] = [sub1 + sub2, sub1]
     }
   }
-  return memo[n]
+  return sub1 + sub2
 }
 
 module.exports = {
